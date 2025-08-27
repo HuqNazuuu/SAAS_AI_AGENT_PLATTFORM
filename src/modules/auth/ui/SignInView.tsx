@@ -26,7 +26,7 @@ import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 
 const formSchema = z.object({
-  email: z.email(),
+  email: z.string().email({ message: 'Invalid email address' }),
   password: z.string().min(1, { message: 'password is required' }),
 })
 
@@ -112,6 +112,7 @@ const SignInView = () => {
                             {...field}
                           />
                         </FormControl>
+                        <FormMessage />
                       </FormItem>
                     )}
                   />{' '}
@@ -128,6 +129,7 @@ const SignInView = () => {
                             {...field}
                           />
                         </FormControl>
+                        <FormMessage />
                       </FormItem>
                     )}
                   />

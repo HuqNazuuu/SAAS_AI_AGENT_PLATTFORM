@@ -50,13 +50,16 @@ export const DadhboardMobile = ({ onLogout }: Props) => {
           </DrawerTitle>
         </DrawerHeader>
         <DrawerFooter className='cursor-pointer '>
-          <Button variant='outline'>
-            Billing
+          <Button
+            variant='outline'
+            onClick={() => authClient.customer.portal()}
+          >
             <CreditCardIcon className='size-4' />
+            Billing
           </Button>
           <Button variant='outline' onClick={onLogout}>
-            Logout
             <LogOutIcon className='size-4' />
+            Logout
           </Button>
         </DrawerFooter>
       </DrawerContent>

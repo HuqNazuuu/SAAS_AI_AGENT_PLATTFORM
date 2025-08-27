@@ -17,6 +17,7 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
 import { DashboardUserButton } from './dashboardUserButon'
+import { DashboardTrail } from './dashboard-trail'
 
 const firstSection = [
   {
@@ -35,7 +36,7 @@ const secondSection = [
   {
     icon: StarIcon,
     label: 'Upgrade',
-    href: '/meetings',
+    href: '/upgrade',
   },
 ]
 const DashboardSidebar = () => {
@@ -109,6 +110,7 @@ const DashboardSidebar = () => {
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter className='text-white'>
+        <DashboardTrail />
         <DashboardUserButton />
       </SidebarFooter>
     </Sidebar>

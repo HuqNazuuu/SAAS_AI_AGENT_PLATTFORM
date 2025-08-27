@@ -29,9 +29,9 @@ import { useState } from 'react'
 const formSchema = z
   .object({
     name: z.string().min(1, { message: 'Name is required' }),
-    email: z.email(),
-    password: z.string().min(1, { message: 'password is required' }),
-    confirmPassword: z.string().min(1, { message: 'password is required' }),
+    email: z.string().email({ message: 'Email is required' }),
+    password: z.string().min(1, { message: 'Password is required' }),
+    confirmPassword: z.string().min(1, { message: 'Password is required' }),
   })
   .refine((data) => data.password === data.confirmPassword, {
     message: "Passwords don't match",
@@ -124,6 +124,7 @@ const SignUpView = () => {
                             {...field}
                           />
                         </FormControl>
+                        <FormMessage />
                       </FormItem>
                     )}
                   />
@@ -141,6 +142,7 @@ const SignUpView = () => {
                             {...field}
                           />
                         </FormControl>
+                        <FormMessage />
                       </FormItem>
                     )}
                   />
@@ -157,6 +159,7 @@ const SignUpView = () => {
                             {...field}
                           />
                         </FormControl>
+                        <FormMessage />
                       </FormItem>
                     )}
                   />
@@ -173,6 +176,7 @@ const SignUpView = () => {
                             {...field}
                           />
                         </FormControl>
+                        <FormMessage />
                       </FormItem>
                     )}
                   />

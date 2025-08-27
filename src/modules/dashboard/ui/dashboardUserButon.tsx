@@ -65,16 +65,19 @@ export const DashboardUserButton = () => {
           </div>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuItem className='cursor-pointer items-center justify-between'>
-          Billing
+        <DropdownMenuItem
+          className='cursor-pointer items-center justify-between'
+          onClick={() => authClient.customer.portal()}
+        >
           <CreditCardIcon className='size-4' />
+          Billing
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={handleLogout}
           className='cursor-pointer items-center justify-between'
         >
-          Logout
           <LogOutIcon className='size-4' />
+          Logout
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
